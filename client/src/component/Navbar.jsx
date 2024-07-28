@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import logo from '/logo.png'
 import { PiPhoneCallLight } from "react-icons/pi";
+import { Link } from 'react-router-dom';
 
 
 const Navbar = () => {
@@ -31,7 +32,7 @@ const Navbar = () => {
         <details>
           <summary>Menu</summary>
           <ul className="p-2">
-            <li><a>All</a></li>
+            <li><Link to='/menu' >All</Link></li>
             <li><a>Biriyani</a></li>
           </ul>
         </details>

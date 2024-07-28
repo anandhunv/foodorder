@@ -8,7 +8,8 @@ const Main = () => {
   return (
     <div className='bg-white'>
       <Navbar/>
-      <Outlet/>
+      <div className='min-h-screen'>      <Outlet/>
+      </div>
       <Footer/>
     </div>
   )
