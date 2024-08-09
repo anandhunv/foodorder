@@ -5,8 +5,11 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
-
+  daisyui: {
+    themes: ["light", "dark", "cupcake"],
+  },
   theme: {
+    
     extend: {
       colors:{
         "green": "#39DB4A",

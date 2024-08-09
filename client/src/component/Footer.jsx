@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="bg-white text-black">
+    <div className="bg-white text-black ">
       <footer className="footer xl:px-24 py-10 px-4   text-black">
         <aside>
           <img src="/logo.png" alt="" className="h-11" />
@@ -11,7 +11,7 @@ const Footer = () => {
           </p>
         </aside>
         <nav>
-          <header className="footer-title text-black">Useful links</header>
+          <header className="footer-title text-black ">Useful links</header>
           <a className="link link-hover">About us</a>
           <a className="link link-hover">Events</a>
           <a className="link link-hover">Blogs</a>

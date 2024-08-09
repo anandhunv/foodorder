@@ -1,11 +1,19 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState,useContext } from 'react'
 import logo from '/logo.png'
-import { PiPhoneCallLight } from "react-icons/pi";
+import { FaCircleUser } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
+import Modal from './Modal';
+import {AuthContext} from "../contexts/AuthProvider";
+import Profile from './Profile';
 
 
 const Navbar = () => {
-  const [isSticky,setSticky]=useState(false)
+  const [isSticky,setSticky]=useState(false);
+
+  const {user} = useContext(AuthContext)
+  console.log(user);
+  
+   
 
   // handleScroll function
   useEffect(()=>{
@@ -88,7 +96,7 @@ const Navbar = () => {
   <div className="navbar-end">
 
     {/* -------------search------------- */}
-    <button className="btn btn-ghost btn-circle hidden  lg:flex ">
+    <button className="btn btn-ghost btn-circle hidden  lg:flex ml-72 ">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className="h-5 w-5"
@@ -123,9 +131,15 @@ const Navbar = () => {
       </div>
     
 
-     {/* --------------------- Contact--------------- */}
-    <a className="btn bg-green border-none rounded-full px-6 text-white flex items-center gap-2"><PiPhoneCallLight />
-    Contact</a>
+     {/* --------------------- login btn--------------- */}
+    {
+      user?<Profile user={user}/>:<button 
+      onClick={()=>document.getElementById('my_modal_5').showModal()}
+      className="btn bg-green border-none rounded-full px-6 text-white flex items-center gap-2"><FaCircleUser />
+      Login</button>
+  
+    }
+    <Modal/>
   </div>
 </div>
     </header>
